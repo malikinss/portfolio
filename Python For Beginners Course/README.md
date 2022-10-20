@@ -1,0 +1,1 @@
+This project includes my solution of practical tasks completed in the "Python For Beginners by BEEGEEK" course.
