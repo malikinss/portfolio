@@ -16,8 +16,8 @@ where:
 The course is structured into the following sections and topic:
 
 ### 2 Input and Output
-###### 2.2 Print and input commands
-###### 2.3 Parameters sep and end, standard PEP-8
+###### 2.2 ```Print``` and ```input``` commands
+###### 2.3 Parameters sep and end, standard ```PEP-8```
 ###### 2.4 Working with integers Part 1
 ###### 2.5 Working with integers Part 2
 
@@ -34,17 +34,17 @@ The course is structured into the following sections and topic:
 ###### 5.1 Programming problems
 
 ### 6 Data Types
-###### 6.1 Numeric data types int and float
+###### 6.1 Numeric data types ```int``` and ```float```
 ###### 6.2 String data type
-###### 6.3 The math module
+###### 6.3 The ```math``` module
 
-### 7 Loops - for and while
-###### 7.1 For loop
-###### 7.2 For loop with the range function
+### 7 Loops - ```for``` and ```while```
+###### 7.1 ```for``` loop
+###### 7.2 ```for``` loop with the ```range``` function
 ###### 7.3 Common scenarios
-###### 7.4 While loop
-###### 7.5 While loop handling digits of a number
-###### 7.6 Loop control statements break, continue, else
+###### 7.4 ```while``` loop
+###### 7.5 ```while``` loop handling digits of a number
+###### 7.6 Loop control statements ```break```, ```continue```, ```else```
 ###### 7.7 Code review, error detection, and performance analysis
 ###### 7.8 Nested loops Part 1
 ###### 7.9 Nested loops Part 2
@@ -59,9 +59,9 @@ The course is structured into the following sections and topic:
 ###### 9.3 String methods Part 1
 ###### 9.4 String methods Part 2
 ###### 9.5 String methods Part 3
-###### 9.6 String representation in computer memory, ASCII and Unicode
+###### 9.6 String representation in computer memory, ```ASCII``` and ```Unicode```
 
-### 10 Final Exercises for String ###
+### 10 Final Exercises for String
 ###### 10.1 Part 1
 ###### 10.2 Part 2
 
@@ -91,7 +91,7 @@ The course is structured into the following sections and topic:
 ###### 14.1 Programming problems
 
 ### 15 Working on a Mini Project
-###### 15.1 The random module
+###### 15.1 The ```random``` module
 ###### 15.2 Number guessing game
 ###### 15.3 Magic 8-Ball
 ###### 15.4 Secure password generator
