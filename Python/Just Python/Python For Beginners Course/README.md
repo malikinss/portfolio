@@ -6,7 +6,7 @@ Here you will find a variety of tasks that contribute to an in-depth understandi
 
 Completing these tasks will allow you to develop your programming skills and improve your ability to solve problems using Python.
 
-Each file in this repository follows the naming convention <b>a_b_c.py</b>, 
+Each file in this repository follows the naming convention <b>``` a_b_c.py ```</b>, 
 where:
 
 - <b>a</b> - represents the section number
