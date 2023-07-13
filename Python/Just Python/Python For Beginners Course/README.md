@@ -1,4 +1,4 @@
-Python For Beginners.
+## Python For Beginners.
 
 This directory is a collection of mathematical and logical problems of varying complexity, the solution of which allows you to master the basics and principles of programming in the Python language. 
 
