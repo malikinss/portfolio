@@ -13,11 +13,11 @@ b represents the topic number
 c represents the exercise number
 The course is structured into the following sections and topics:
 
-#Section 2: Input and Output
-##Topic 2.2: Print and input commands
-##Topic 2.3: Parameters sep and end, standard PEP-8
-##Topic 2.4: Working with integers Part 1
-##Topic 2.5: Working with integers Part 2
+# Section 2: Input and Output
+## Topic 2.2: Print and input commands
+## Topic 2.3: Parameters sep and end, standard PEP-8
+## Topic 2.4: Working with integers Part 1
+## Topic 2.5: Working with integers Part 2
 
 Section 3: Final Exercises for Input and Output Section
 Topic 3.1: Part 1
