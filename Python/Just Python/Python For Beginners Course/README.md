@@ -9,9 +9,9 @@ Completing these tasks will allow you to develop your programming skills and imp
 Each file in this repository follows the naming convention <b>a_b_c.py</b>, 
 where:
 
-<b>a</b> represents the section number
-<b>b</b> represents the topic number
-<b>c</b> represents the exercise number
+- <b>a</b> - represents the section number
+- <b>b</b> - represents the topic number
+- <b>c</b> - represents the exercise number
 
 The course is structured into the following sections and topic:
 
