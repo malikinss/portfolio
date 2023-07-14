@@ -50,8 +50,7 @@ The course is structured into the following sections and topic:
 ###### 7.9 Nested loops Part 2
 
 ### 8 Final Exercises for Loops ###
-###### 8.1 Part 1
-###### 8.2 Part 2
+###### 8.2 Solve the problems
 
 ### 9 String Data Type
 ###### 9.1 Indexing
@@ -62,8 +61,7 @@ The course is structured into the following sections and topic:
 ###### 9.6 String representation in computer memory, ```ASCII``` and ```Unicode```
 
 ### 10 Final Exercises for String
-###### 10.1 Part 1
-###### 10.2 Part 2
+###### 10.2 Solve the problems
 
 ### 11 Lists
 ###### 11.1 Introduction to lists
