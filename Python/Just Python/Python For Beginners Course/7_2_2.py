@@ -1,0 +1,14 @@
+""" 
+Task: Two integers m and n are given.
+Write a program that prints all numbers from m to n inclusive, 
+in ascending order if m < n, or in descending order otherwise.
+"""
+
+m, n = int(input()), int(input())
+
+if m < n:
+    for i in range(m, n + 1):
+        print(i)
+else:
+    for i in range(m, n - 1, -1):
+        print(i)
