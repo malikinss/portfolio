@@ -56,6 +56,17 @@ def get_next_ball(prev_x, prev_y, prev_rad, colour):
     return next_ball, next_ball_sets
 
 
+def init_line(start_x, end_x, start_y, end_y, width, colour):
+
+    new_line = gr.Line(gr.Point(start_x, start_y), gr.Point(end_x, end_y))
+
+    new_line.setWidth(width)
+
+    new_line.setOutline(colour)
+
+    return new_line
+
+
 def get_eye_x(head_x, head_rad, eye_side):
     '''This function calculates and returns new x coordinate for eye'''
     eye_x = 0
@@ -71,12 +82,7 @@ def get_eye_x(head_x, head_rad, eye_side):
 
 
 def init_eyebrow(start_x, end_x, point_y, width, colour):
-
-    eyebrow = gr.Line(gr.Point(start_x, point_y), gr.Point(end_x, point_y))
-
-    eyebrow.setWidth(width)
-
-    eyebrow.setOutline(colour)
+    eyebrow = init_line(start_x, end_x, point_y, point_y, width, colour)
 
     return eyebrow
 
@@ -112,6 +118,7 @@ def get_eyebrow(eye_x, eye_y, eye_rad):
 
     return eyebrow
 
+
 def get_eyes(head_x, head_y, head_rad, eye_colour):
     new_eyes = []
 
@@ -137,79 +144,206 @@ def get_eyes(head_x, head_y, head_rad, eye_colour):
     return new_eyes
 
 
+def get_mouth(head_x, head_y, head_rad, colour, width):
+
+    start_mouth_x = head_x - head_rad / 3
+    end_mouth_x = head_x + head_rad / 3
+    
+    mouth_y = head_y + head_rad / 2 
+
+    mouth = init_line(start_mouth_x, end_mouth_x, mouth_y, mouth_y, 2.5, "black")
+
+    return mouth
 
 
+def get_carrot(head_x, head_y, head_rad, width, colour):
+    offset_x = (head_rad / 3)
+    offset_y = (head_rad / 5) * 1.5
 
-def draw_head(head_ball, l_eye, r_eye, l_eyebrow, r_eyebrow, window):
+    carrot_start_x = head_x
+    carrot_end_x = head_x - offset_x
+
+    carrot_start_y = head_y
+    carrot_end_y = head_y + offset_y
+
+    carrot = init_line(carrot_start_x, carrot_end_x, carrot_start_y, carrot_end_y, width, colour)
+    
+    return carrot
+
+
+def get_face(head_x, head_y, head_r):
+    face = []
+
+    eyes =  get_eyes(head_x, head_y, head_r, "black")
+    mouth = get_mouth(head_x, head_y, head_r, 2.5, "black")
+    carrot = get_carrot(head_x, head_y, head_r, 5, "orange")
+
+    face.append(eyes)
+    face.append(mouth)
+    face.append(carrot)
+
+    return face   
+
+
+def draw_face(face, window):
+    face[0][0].draw(window)
+    face[0][1].draw(window)
+    face[0][2].draw(window)
+    face[0][3].draw(window)
+
+    face[1].draw(window)
+
+    face[2].draw(window)
+
+
+def draw_head_return_sets(body_x, body_y, body_r, body_cl, window):
+    head_ball, head_ball_sets = get_next_ball(body_x, 
+                                              body_y, 
+                                              body_r, 
+                                              body_cl)
     head_ball.draw(window)
-    l_eye.draw(window)
-    r_eye.draw(window)
-    l_eyebrow.draw(window)
-    r_eyebrow.draw(window)
+    
+    face = get_face(head_ball_sets[0], 
+                    head_ball_sets[1], 
+                    head_ball_sets[2])
+    draw_face(face, window)
+
+    return head_ball_sets
 
 
-def draw_body(bottom_ball, middle_ball, window):
-    bottom_ball.draw(window)
+def get_fingers(hand_end_x, hand_end_y, body_r, hand_side_flag):
+    fingers = []
+
+    offset = (body_r / 10) * hand_side_flag
+
+
+    finger_1 = init_line(hand_end_x, 
+                         hand_end_x + offset, 
+                         hand_end_y,
+                         hand_end_y,
+                         2, "black")
+    
+    finger_2 = init_line(hand_end_x, 
+                         hand_end_x + offset, 
+                         hand_end_y,
+                         hand_end_y + offset,
+                         2, "black")
+    
+    finger_3 = init_line(hand_end_x, 
+                         hand_end_x, 
+                         hand_end_y,
+                         hand_end_y + offset,
+                         2, "black")
+
+    fingers.append(finger_1)
+    fingers.append(finger_2)
+    fingers.append(finger_3)
+
+    return fingers
+
+
+def get_hand(body_x, body_y, body_r, hand_side):
+
+    hand_side_flag = 0
+
+    if hand_side == "left":
+        hand_side_flag = -1
+    elif hand_side == "right":
+        hand_side_flag = 1
+        
+    hand_start_x = body_x + (body_r * hand_side_flag)
+    hand_end_x = hand_start_x + (body_r * hand_side_flag)
+
+    hand_start_y = body_y
+    hand_end_y = hand_start_y + (body_r / 2)
+
+    hand = init_line(hand_start_x, 
+                    hand_end_x, 
+                    hand_start_y, 
+                    hand_end_y, 
+                    2.5, "black")
+    
+    fingers = get_fingers(hand_end_x, hand_end_y, body_r, hand_side_flag)
+    
+    return hand, fingers
+
+
+def draw_hands(body_x, body_y, bode_r, window):
+    r_hand, r_fingers = get_hand(body_x, body_y, bode_r, "right")
+    l_hand, l_fingers = get_hand(body_x, body_y, bode_r, "left")
+
+    r_hand.draw(window)
+    r_fingers[0].draw(window)
+    r_fingers[1].draw(window)
+    r_fingers[2].draw(window)
+
+    l_hand.draw(window)
+    l_fingers[0].draw(window)
+    l_fingers[1].draw(window)
+    l_fingers[2].draw(window) 
+
+
+def draw_body_return_sets(bottom_x, bottom_y, bottom_r, body_cl ,window):
+    middle_ball, middle_ball_sets = get_next_ball(bottom_x, 
+                                              bottom_y, 
+                                              bottom_r, 
+                                              body_cl)
+    
     middle_ball.draw(window)
 
+    draw_hands(middle_ball_sets[0],
+               middle_ball_sets[1],
+               middle_ball_sets[2],
+               window)
+
+    return middle_ball_sets
 
 
-def draw_snowman(head_ball,
-                 middle_ball,  
-                 bottom_ball, 
-                 l_eye, 
-                 r_eye, 
-                 l_eyebrow, 
-                 r_eyebrow,
-                 window):
-    
-    head_ball.draw(window)
-    l_eye.draw(window)
-    r_eye.draw(window)
-    l_eyebrow.draw(window)
-    r_eyebrow.draw(window)
-
-    middle_ball.draw(window)
-    
+def draw_bottom_return_sets(x, y, radius, color, window):
+    bottom_ball, bottom_ball_sets = get_next_ball(x, y, radius, color)
     bottom_ball.draw(window)
 
-
-x_size = 1000
-y_size = 800
-
-window = gr.GraphWin("Draw a snowman project", x_size, y_size)
-
-body_colour = "#d9d9d9"
-
-start_rad = 125
-start_x = x_size / 2
-start_y = y_size - start_rad
-
-bottom_ball, bottom_ball_sets = get_next_ball(start_x, 
-                                              start_y, 
-                                              start_rad, 
-                                              body_colour)
-
-middle_ball, middle_ball_sets = get_next_ball(bottom_ball_sets[0], 
-                                              bottom_ball_sets[1], 
-                                              bottom_ball_sets[2], 
-                                              body_colour)
-
-head_ball, head_ball_sets = get_next_ball(middle_ball_sets[0], 
-                                          middle_ball_sets[1],
-                                          middle_ball_sets[2], 
-                                          body_colour)
-
-eyes =  get_eyes(head_ball_sets[0], 
-                 head_ball_sets[1], 
-                 head_ball_sets[2],
-                 "black")
+    return bottom_ball_sets
 
 
-draw_snowman(head_ball, middle_ball, bottom_ball, 
-             eyes[0], eyes[1], eyes[2], eyes[3], window)
+def draw_snowman(x_size, y_size):
+    window = gr.GraphWin("Draw a snowman project", x_size, y_size)
+
+    body_colour = "#d9d9d9"
+
+    start_rad = 125
+    start_x = x_size / 2
+    start_y = y_size - start_rad
+
+    bottom_ball_sets = draw_bottom_return_sets(start_x, 
+                                               start_y, 
+                                               start_rad, 
+                                               body_colour, 
+                                               window)
+
+    middle_ball_sets = draw_body_return_sets(bottom_ball_sets[0], 
+                                             bottom_ball_sets[1], 
+                                             bottom_ball_sets[2],
+                                             body_colour, 
+                                             window)
+
+    head_ball_sets = draw_head_return_sets(middle_ball_sets[0], 
+                                           middle_ball_sets[1], 
+                                           middle_ball_sets[2],
+                                           body_colour, 
+                                           window)
+    
+    return window
+
+def main():
+    x_size = 1000
+    y_size = 800
+
+    window = draw_snowman(x_size, y_size)
+
+    window.getMouse()
+
+    window.close()
 
 
-window.getMouse()
-
-window.close()
+main()
