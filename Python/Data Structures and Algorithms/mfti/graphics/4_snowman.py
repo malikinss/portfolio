@@ -335,6 +335,7 @@ def draw_snowman(x_size, y_size):
     
     return window
 
+
 def main():
     x_size = 1000
     y_size = 800
