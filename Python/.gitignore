@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+venv/**
+/venv/
+venv/*.*
+venv/*
+portfolio_venv/**
+/portfolio_venv/
+portfolio_venv/*.*
+portfolio_venv/*
