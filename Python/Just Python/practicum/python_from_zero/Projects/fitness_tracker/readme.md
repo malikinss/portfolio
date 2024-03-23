@@ -9,7 +9,7 @@ Software module for processing data from the "runaway" fitness tracker from Unic
 - return saved data for processing in other applications.
         
 ## Summary format:
-```python
+```
 Time: `time from received data packet`.
 Number of steps for today: 'sum of steps taken since the beginning of the current day'.
 The distance was 'sum of steps since the beginning of the current day, converted to km' km.
