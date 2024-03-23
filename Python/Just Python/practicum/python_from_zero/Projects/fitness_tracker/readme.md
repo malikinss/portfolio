@@ -12,9 +12,9 @@ Software module for processing data from the "runaway" fitness tracker from Unic
 ```
 Time: `time from received data packet`.
 Number of steps for today: 'sum of steps taken since the beginning of the current day'.
-The distance was 'sum of steps since the beginning of the current day, converted to km' km.
-You have burned 'number of kilocalories expended since the beginning of the current day' kcal.
-Motivational message based on results
+The distance was 'sum of km since the beginning of the current day' km.
+You have burned 'spent kilocalories since the beginning of day' kcal.
+Motivational message based on results.
 ```
 ## List of motivating messages depending on the distance traveled by the user:
 ```python
