@@ -1,0 +1,7 @@
+import sys
+for line in sys.stdin:
+    #keksiki#
+    if (line.lstrip(' ')[0] != '#'):
+        print(line.rstrip('\n'))#
+    #check....
+print('#')

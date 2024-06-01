@@ -1,0 +1,18 @@
+n = int(input())
+s = []
+z = []
+count = 0
+for i in range(n):
+    s1 = input()
+    s.append(s1)
+k = int(input())
+for j in range(k):
+    z1 = input()
+    z.append(z1)
+for i in range(len(s)):
+    count = 0
+    for j in range(len(z)):
+        if z[j].lower() in s[i].lower():
+            count +=1
+    if count == len(z):
+        print(s[i])

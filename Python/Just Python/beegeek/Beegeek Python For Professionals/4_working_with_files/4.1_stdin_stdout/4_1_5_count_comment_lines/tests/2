@@ -1,0 +1,14 @@
+n = int(input())
+l = [input() for _ in range(n)]
+k = int(input())
+search = [input() for _ in range(k)]
+output = []
+#в этих комментариях #нет смысла #спасите
+for i in l:
+    flag = True #могу закомментировать это
+    for j in search:  #и это
+        if j.lower() not in i.lower():
+            flag = False #и даже это
+    if flag:
+        output.append(i)   #никто меня не остановит #вообще
+print(*output, sep = '\n') #никогда
