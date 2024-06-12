@@ -1,0 +1,14 @@
+text = '''ball,color,purple
+ball,size,4
+ball,notes,it's round
+cup,color,blue
+cup,size,1
+cup,notes,none'''
+
+with open('data.csv', 'w', encoding='utf-8') as file:
+    file.write(text)
+
+condense_csv('data.csv', id_name='ID')
+
+with open('condensed.csv', encoding='utf-8') as file:
+    print(file.read().strip())
