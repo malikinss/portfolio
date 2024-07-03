@@ -1,0 +1,8 @@
+data = '''{
+        'beegeek': 2018,
+        ('Timur', 'Guev'): 29,
+        ('Artur', 'Harisov'): 20,
+        'stepik': 2013
+       }'''
+
+print(is_correct_json(data))

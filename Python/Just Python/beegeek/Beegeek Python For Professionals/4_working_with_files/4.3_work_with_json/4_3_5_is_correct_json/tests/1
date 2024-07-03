@@ -1,0 +1,3 @@
+data = '{"name": "Barsik", "age": 7, "meal": "Wiskas"}'
+
+print(is_correct_json(data))

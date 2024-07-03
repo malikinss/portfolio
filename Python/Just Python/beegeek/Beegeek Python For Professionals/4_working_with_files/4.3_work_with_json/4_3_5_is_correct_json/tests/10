@@ -1,0 +1,1 @@
+print(is_correct_json('["beegeek", 1, 2, 3]'))

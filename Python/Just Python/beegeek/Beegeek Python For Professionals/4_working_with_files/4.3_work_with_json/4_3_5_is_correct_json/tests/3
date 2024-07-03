@@ -1,0 +1,6 @@
+data = '''{
+        "beegeek": 2018,
+        "stepik": 2013
+       }'''
+
+print(is_correct_json(data))
