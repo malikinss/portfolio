@@ -1,0 +1,3 @@
+type: donut
+name: Cake
+tastes: chocolate, cream, strawberry
