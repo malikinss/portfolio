@@ -1,0 +1,4 @@
+messages = ['thanks', 'Stepik is useful for', 'thanks', 'np ur welcome', 'practice']
+senders = ['Bob', 'Charlie', 'Bob', 'Bob', 'Charlie']
+
+print(best_sender(messages, senders))

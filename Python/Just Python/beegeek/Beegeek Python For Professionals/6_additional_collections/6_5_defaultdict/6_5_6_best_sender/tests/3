@@ -1,0 +1,4 @@
+messages = ['Hello userTwooo', 'Hi userThree', 'Wonderful day Alice', 'Nice day userThree']
+senders = ['Alice', 'userTwo', 'userThree', 'Alice']
+
+print(best_sender(messages, senders))

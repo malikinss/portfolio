@@ -1,0 +1,4 @@
+messages = ['bu bu da', 'bu bu da', 'bu bu da', 'bu bu da', 'bu bu da', 'bu bu net']
+senders = ['dima', 'anri', 'timur', 'timur', 'anri', 'dima']
+
+print(best_sender(messages, senders))
