@@ -1,0 +1,6 @@
+result = wins([('Артур', 'Дима'), ('Дима', 'Артур'),
+               ('Артур', 'Тимур'), ('Тимур', 'Артур'),
+               ('Тимур', 'Дима'), ('Дима', 'Тимур')])
+               
+for winner, losers in sorted(result.items()):
+    print(winner, '->', *sorted(losers))

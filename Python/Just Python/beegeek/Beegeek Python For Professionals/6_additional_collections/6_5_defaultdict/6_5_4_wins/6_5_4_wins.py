@@ -26,7 +26,7 @@ from collections import defaultdict
 from typing import Dict, Tuple, Set, Iterable
 
 
-def wins(games: Iterable[Tuple[str, str]]) -> Dict[str, Set[str]]:
+def wins(pairs: Iterable[Tuple[str, str]]) -> Dict[str, Set[str]]:
     """
     Computes the winners and their defeated opponents from a list of games.
 
@@ -40,7 +40,7 @@ def wins(games: Iterable[Tuple[str, str]]) -> Dict[str, Set[str]]:
     """
     winners_dict = defaultdict(set)
 
-    for winner, loser in games:
+    for winner, loser in pairs:
         winners_dict[winner].add(loser)
 
     return winners_dict

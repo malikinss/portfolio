@@ -1,0 +1,4 @@
+result = wins([('Тимур', 'Артур'), ('Тимур', 'Дима'), ('Дима', 'Артур')])
+
+for losers in result.values():
+    print(type(losers) == set)
