@@ -1,0 +1,4 @@
+data = OrderedDict(e=11, b=22, a=99, g=66, c=44, d=33, h=99, f=77, i=88)
+custom_sort(data)
+
+print(*data.items())

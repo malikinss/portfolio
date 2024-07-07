@@ -1,0 +1,4 @@
+data = OrderedDict(Earth=3, Mercury=1, Mars=4, Venus=2)
+custom_sort(data, by_values=True)
+
+print(*data.items())
