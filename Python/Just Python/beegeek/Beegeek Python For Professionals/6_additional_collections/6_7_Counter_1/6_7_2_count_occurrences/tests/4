@@ -1,0 +1,4 @@
+word = 'bee'
+words = 'Bee bEe Bee BEe BEE bee bee bee'
+
+print(count_occurences(word, words))

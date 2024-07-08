@@ -1,0 +1,4 @@
+word = 'Java'
+words = 'Python C++ C# JavaScript Go Assembler'
+
+print(count_occurences(word, words))

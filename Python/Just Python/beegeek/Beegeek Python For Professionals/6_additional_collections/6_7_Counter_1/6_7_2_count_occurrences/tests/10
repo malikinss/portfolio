@@ -1,0 +1,4 @@
+word = 's'
+words = 'S sdsf sds sdfsdg dhgf gfd asd'
+
+print(count_occurences(word, words))

@@ -1,0 +1,4 @@
+word = 'step'
+words = 'stepik bEe Bee BEe STEP STEP bee STEP stepik stepik STEPik STEPIK'
+
+print(count_occurences(word, words))

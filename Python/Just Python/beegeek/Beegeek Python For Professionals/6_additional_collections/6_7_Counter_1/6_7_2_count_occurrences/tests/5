@@ -1,0 +1,4 @@
+word = 'bee'
+words = 'arthur asdad gkjdf BEeG bee dasdafd asfd gs beegeek stepik'
+
+print(count_occurences(word, words))
